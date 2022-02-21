@@ -1,4 +1,4 @@
-#A fake workspace with FASTQ files
+# A fake workspace with FASTQ files
 
 This directory contains fake data for demonstration purposes. The fake data is needed to run the pipeline script.  
 This is project is a part of the course data processing of the study Bioinformatics at Hanze University of Applied Science year 3.
