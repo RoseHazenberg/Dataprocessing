@@ -1,4 +1,6 @@
 SAMPLES = ['A', 'B', 'C']
+workdir: '/commons/Themas/Thema11/Dataprocessing/WC02/data/'
+FASTQ_DIR = 'samples/'
 
 rule all:
     input:
@@ -6,8 +8,8 @@ rule all:
 
 rule bwa_map:
     input:
-        'data/genome.fa',
-        'data/samples/{sample}.fastq'
+        'genome.fa',
+        FASTQ_DIR + '{sample}.fastq'
     benchmark:
         'benchmarks/{sample}.bwa.benchmark.txt'
     output:
