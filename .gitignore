@@ -127,3 +127,9 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+.idea
+tutorial_01/.snakemake/
+tutorial_02/.snakemake/
+tutorial_03/.snakemake/
+tutorial_04/.snakemake/
