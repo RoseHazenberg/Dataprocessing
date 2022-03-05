@@ -1,4 +1,5 @@
 SAMPLES = ['A', 'B']
+WORKDIR =  '/commons/Themas/Thema11/Dataprocessing/WC04/data/'
 
 rule all:
     input:
@@ -6,7 +7,7 @@ rule all:
 
 rule bwa_index:
     input:
-        'data/reference.fa'
+        WORKDIR + 'reference.fa'
     output:
         touch('results/bwa_index.done')
     message: 'executing create bwa index in the genomic reference {input} to generate the following {output}'
@@ -15,9 +16,9 @@ rule bwa_index:
 
 rule bwa_align:
     input:
-        ref_gen = 'data/reference.fa',
-        reads = 'data/{sample}.txt',
-        check = 'results/bwa_index.done'
+        ref_gen = WORKDIR + 'reference.fa',
+        reads = WORKDIR + '{sample}.txt',
+        # check = 'results/bwa_index.done'
     output:
         'temp/out{sample}.sai'
     message: 'executing bwa aln on {input.reads} against {input.ref_gen} to generate {output}'
@@ -26,8 +27,8 @@ rule bwa_align:
 
 rule align_into_sam:
     input:
-        ref_gen = 'data/reference.fa',
-        reads = 'data/{sample}.txt',
+        ref_gen = WORKDIR + 'reference.fa',
+        reads = WORKDIR + '{sample}.txt',
         sai = 'temp/out{sample}.sai'
     output:
         'aligned/out{sample}.sam'
@@ -73,7 +74,7 @@ rule samtools_index:
 
 rule bcftools_view:
     input:
-        ref_gen = 'data/reference.fa',
+        ref_gen = WORKDIR + 'reference.fa',
         bam = expand('filtered/out{sample}.dedupe.bam', sample=SAMPLES),
         bai = expand('filtered/out{sample}.dedupe.bam.bai', sample=SAMPLES)
     output:

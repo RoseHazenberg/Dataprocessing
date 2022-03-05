@@ -1,4 +1,5 @@
 #configfile config.yaml
+url: "bioinf.nl/~fennaf/snakemake/WC03/data/"
 genome: data/A
 ext : .fa
 samples:
