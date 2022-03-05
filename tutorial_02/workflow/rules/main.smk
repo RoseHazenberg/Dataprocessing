@@ -1,5 +1,5 @@
 SAMPLES = ['A', 'B', 'C']
-workdir: '/commons/Themas/Thema11/Dataprocessing/WC02/data/'
+workdir: '/mnt/c/Users/Rose Hazenberg/commons/data/'
 FASTQ_DIR = 'samples/'
 
 rule all:
@@ -39,7 +39,7 @@ rule samtools_index:
         
 rule bcftools_call:
     input:
-        fa = 'data/genome.fa',
+        fa = 'genome.fa',
         bam = expand('sorted_reads/{sample}.bam', sample=SAMPLES),
         bai = expand('sorted_reads/{sample}.bam.bai', sample=SAMPLES)
     output:
