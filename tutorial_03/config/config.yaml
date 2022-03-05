@@ -1,3 +1,4 @@
+#configfile config.yaml
 genome: data/A
 ext : .fa
 samples:
@@ -10,3 +11,4 @@ samples:
     G : /data/G.bam
     H : /data/H.bam
     I : /data/I.bam
+    J : /data/J.bam
