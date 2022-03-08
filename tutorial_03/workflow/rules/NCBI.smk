@@ -2,10 +2,6 @@
 from snakemake.remote.NCBI import RemoteProvider as NCBIRemoteProvider
 NCBI = NCBIRemoteProvider(email='c.r.hazenberg@st.hanze.nl')
 
-rule all:
-    input:
-        'results/test.fasta'
-
 rule download_from_ncbi:
     input:
         NCBI.remote('KY785484.1.fasta', db='nuccore')
@@ -13,4 +9,3 @@ rule download_from_ncbi:
         'results/test.fasta'
     run:
         shell('mv {input} {output}')
-

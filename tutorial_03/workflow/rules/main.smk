@@ -9,7 +9,7 @@ include: 'HTTP.smk'
 include: 'NCBI.smk'
 include: 'configuration.smk'
 
-rule all_files:
+rule all:
     input:
         'results/test.txt',
         'results/test.fasta',
