@@ -1,6 +1,6 @@
 SAMPLES = ['A', 'B']
 
-rule bcftools_view:
+rule bcftools:
     input:
         ref_gen = 'data/reference.fa',
         bam = expand('filtered/out{sample}.dedupe.bam', sample=SAMPLES),

@@ -1,3 +1,8 @@
+"""
+All the rules that use MarkDuplicates as command are in this file.
+#detect_and_remove_duplicates, detects and removes the duplicates
+"""
+
 rule detect_and_remove_duplicates:
     input:
         'sorted/out{sample}.sorted.bam'

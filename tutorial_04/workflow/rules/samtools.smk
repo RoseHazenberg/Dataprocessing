@@ -1,13 +1,7 @@
-rule align_into_sam:
-    input:
-        ref_gen = 'data/reference.fa',
-        reads = 'data/{sample}.txt',
-        sai = 'temp/out{sample}.sai'
-    output:
-        'aligned/out{sample}.sam'
-    message: 'convert alignment into {output} by executing bwa samse'
-    shell:
-        'bwa samse {input.ref_gen} {input.sai} {input.reads} > {output}'
+"""
+All the rules that use samtools as command are in this file.
+#samtools_sort, convert the .sam file into a .bam file and sort it
+"""
 
 rule samtools_sort:
     input:
