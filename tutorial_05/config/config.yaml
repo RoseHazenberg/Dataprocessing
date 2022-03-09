@@ -1,0 +1,5 @@
+genome: data/reference
+ext: .fa
+samples:
+  A : data/A.txt
+  B : data/B.txt
