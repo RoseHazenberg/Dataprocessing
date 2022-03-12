@@ -4,10 +4,10 @@ Includes all necessary Snakefiles needed
 to execute the workflow.
 """
 
+configfile: 'config/config.yaml'
 include: "bwa.smk"
 include: "samtools.smk"
 include: "markduplicates.smk"
-include: "samtools_index.smk"
 include: "bcftools.smk"
 
 rule all:
