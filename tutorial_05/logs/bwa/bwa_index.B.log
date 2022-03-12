@@ -1,0 +1,11 @@
+[bwa_aln] 17bp reads: max_diff = 2
+[bwa_aln] 38bp reads: max_diff = 3
+[bwa_aln] 64bp reads: max_diff = 4
+[bwa_aln] 93bp reads: max_diff = 5
+[bwa_aln] 124bp reads: max_diff = 6
+[bwa_aln] 157bp reads: max_diff = 7
+[bwa_aln] 190bp reads: max_diff = 8
+[bwa_aln] 225bp reads: max_diff = 9
+[main] Version: 0.7.17-r1188
+[main] CMD: bwa aln -I -t 8 data/reference.fa data/A.txt data/B.txt
+[main] Real time: 0.164 sec; CPU: 0.172 sec

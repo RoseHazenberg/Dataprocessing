@@ -1,0 +1,2 @@
+[warning] samtools mpileup option `u` is functional, but deprecated. Please switch to using bcftools mpileup in future.
+[mpileup] 2 samples in 2 input files
