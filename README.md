@@ -13,11 +13,11 @@ Each directory has the following structure:
 ├── workflow
 │   ├── rules
 |   │   ├── module1.smk
-|   │   └── module2.smk
+|   │   ├── module2.smk
+|   │   └── Snakefile
 │   ├── scripts
 |   │   ├── script1.py
 |   │   └── script2.R
-|   └── Snakefile
 ├── config
 │   ├── config.yaml
 └── results
