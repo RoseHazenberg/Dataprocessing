@@ -1,6 +1,7 @@
 """
 All the rules that use samtools as command are in this file.
 #samtools_sort, convert the .sam file into a .bam file and sort it
+#samtools_index, index the results
 """
 
 rule samtools_sort:
@@ -13,3 +14,12 @@ rule samtools_sort:
     shell:
         'samtools view -S -b {input} > {output.bam} | \
          samtools sort {output.bam} -o {output.sort}'
+
+rule samtools_index:
+    input:
+        'filtered/out{sample}.dedupe.bam'
+    output:
+        'filtered/out{sample}.dedupe.bam.bai'
+    message: 'executing samtools index on {input}'
+    shell:
+        'samtools index {input}'
