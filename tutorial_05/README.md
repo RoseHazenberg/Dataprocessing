@@ -28,13 +28,15 @@ The snakefile needed for the workflow p is located in `workflow/rules/Snakfile`.
 ```
 # Run the snakefile
 snakemake --snakefile workflow/rules/Snakefile --cores 8 #this is what my laptop has for cores
-snakemake --snakefile workflow/rules/pipeline.smk --cores 2 #generates the output of a pileup
+snakemake --snakefile workflow/rules/Snakefile --cluster "sbatch -t {cluster.time} -p {cluster.partition} -N {cluster.nodes}" --cluster-config config/cluster_config.yaml --jobs 8 #to use slurm cluster 
 ```
 
 ## Results
 The results of the workflow can be found in the directory `results/out.vcf` and the steps are shown in the image above and also in `images/dag.svg`.
 The results of the rules from the pipeline are located in `aligned, filtered, results, sorted and temp`.
 And the benchmarks and logging can be found in the directory `benchmarks and logging`. 
+
+The results of the slurm cluster are located under `tutorial_05` and are named `slurm-{numbers}.out`.
 
 ## Author and support
 For any information of questions please contact the author.  
