@@ -1,0 +1,22 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 2
+Rules claiming more threads will be scaled down.
+Select jobs to execute...
+
+[Mon Mar 14 20:40:07 2022]
+Job 0: executing aligned/outB.sam into temp/outB.bam and samtools sort on the following temp/outB.bam to generate the following sorted/outB.sorted.bam with 2 threads
+
+[Mon Mar 14 20:40:07 2022]
+Error in rule samtools_sort:
+    jobid: 0
+    output: temp/outB.bam, sorted/outB.sorted.bam
+    log: logs/samtools/B.log (check log file(s) for error message)
+    shell:
+        (samtools view -S -b aligned/outB.sam > temp/outB.bam | samtools sort temp/outB.bam -o sorted/outB.sorted.bam) 2> logs/samtools/B.log
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job samtools_sort since they might be corrupted:
+temp/outB.bam
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message

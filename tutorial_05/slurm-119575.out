@@ -1,0 +1,12 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 2
+Rules claiming more threads will be scaled down.
+Select jobs to execute...
+
+[Thu Mar 17 16:26:03 2022]
+Job 0: executing samtools mpileup on data/reference.fa filtered/outA.dedupe.bam and covert with bcftools view into results/out.vcf with 2 threads
+
+[Thu Mar 17 16:26:03 2022]
+Finished job 0.
+1 of 1 steps (100%) done
